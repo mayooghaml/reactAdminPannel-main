@@ -25,19 +25,19 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import { GetPosts } from "../../Common/requestApi";
 import { useStyles } from "./BodyStyles";
 import { Public } from "@material-ui/icons";
-
+import DeleteIcon from "@material-ui/icons/Delete";
 export default function BlogPost() {
   const classes = useStyles();
   const [Fetched, setFetched] = useState(false);
   const [Posts, setPosts] = useState([]);
-  const Button = styled.button`
-  background-color: green;
-  font-size: 20px;
-  padding: 10px 60px;
-  border-radius: 5px;
-  margin: 10px 0px;
-  cursor: pointer;
-`;
+  // const Button = styled.button`
+  // // background-color;
+  // font-size: 20px;
+  // padding: 9px 50px;
+  // border-radius: 5px;
+  // margin: 10px 0px;
+  // cursor: pointer;
+// `;
 
 
   //calling posts api
@@ -55,16 +55,31 @@ export default function BlogPost() {
       <Grid container spacing={3}>
       <Grid item xs={12} sm={6} md={3}>
       <img alt={image} src={image}/>
+      <Button variant="outlined" startIcon={<DeleteIcon/>}>
+  Delete
+</Button>
         </Grid>
       </Grid>
-      <Grid container spacing={3}>
+      <Grid container spacing={4}>
       <Grid item xs={12} sm={6} md={3}>
+     
       <img alt={image} src={image2}/>
-        </Grid>
+      <Button variant="outlined" startIcon={<DeleteIcon/>}>
+  Delete
+</Button>
+        </Grid> 
       </Grid>
       <Grid container spacing={3}>
       <Grid item xs={12} sm={6} md={3}>
       <img alt={image} src={image3}/>
+      <Button variant="outlined" startIcon={<DeleteIcon/>}>
+  Delete
+</Button>
+<br>
+</br>
+<Button variant="contained" color="green">
+  Add Templates
+</Button>
         </Grid>
       </Grid>
       {/* <Grid container spacing={3}>
