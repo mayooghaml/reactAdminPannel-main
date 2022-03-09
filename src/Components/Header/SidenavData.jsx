@@ -26,7 +26,7 @@ export default function SidenavData({ handleDrawerClose }) {
       link: "/Users",
       // icon: <NotificationsActiveIcon />,
     },
-    { label: "Update Profile", link: "/UpdateProfile",  },
+    { label: "logout", link: "/logout", icon: <ExitToAppIcon />  },
   ];
 
   return (
