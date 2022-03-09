@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 
 import styled, { css } from 'styled-components';
 
+import Gallery from 'react-grid-gallery';
+
+
 import {
   Avatar,
   Box,
@@ -25,13 +28,19 @@ export default function BlogPost() {
   const [Posts, setPosts] = useState([]);
   const Button = styled.button`
   background-color: green;
-  color: white;
   font-size: 20px;
   padding: 10px 60px;
   border-radius: 5px;
   margin: 10px 0px;
   cursor: pointer;
 `;
+const IMAGES =
+[{
+        src: "https://www.google.com",
+        thumbnail: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_n.jpg",
+        thumbnailWidth: 320,
+        thumbnailHeight: 174
+}]
 
   //calling posts api
   useEffect(() => {
@@ -45,20 +54,20 @@ export default function BlogPost() {
   return (
     <Box mt={2}>
       <PageHeader  title='Templates' />
-      <Grid container spacing={1}>
-       <Button
-          title="Template 1"
-       />
+      <Grid container spacing={3}>
+      <Grid item xs={12} sm={6} md={3}>
+      <Gallery images={IMAGES}/>
+        </Grid>
       </Grid>
-      <Grid container spacing={1}>
-       <Button
-          title="Template 2"
-       />
+      <Grid container spacing={3}>
+      <Grid item xs={12} sm={6} md={3}>
+       Test message 2
+        </Grid>
       </Grid>
-      <Grid container spacing={1}>
-       <Button
-          title="Template 3"
-       />
+      <Grid container spacing={3}>
+      <Grid item xs={12} sm={6} md={3}>
+       Test message 3
+        </Grid>
       </Grid>
       <Grid container spacing={1}>
        <Button
