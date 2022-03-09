@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 
 import styled, { css } from 'styled-components';
 
-import Gallery from 'react-grid-gallery';
+import image from "../Header/ActionTab/img1.jpg";
+
+import image2 from "../Header/ActionTab/img2.jpg";
+import image3 from "../Header/ActionTab/img3.jpg";
 
 
 import {
@@ -21,6 +24,7 @@ import { PageHeader } from "../../Common/Components";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import { GetPosts } from "../../Common/requestApi";
 import { useStyles } from "./BodyStyles";
+import { Public } from "@material-ui/icons";
 
 export default function BlogPost() {
   const classes = useStyles();
@@ -34,13 +38,7 @@ export default function BlogPost() {
   margin: 10px 0px;
   cursor: pointer;
 `;
-const IMAGES =
-[{
-        src: "https://www.google.com",
-        thumbnail: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_n.jpg",
-        thumbnailWidth: 320,
-        thumbnailHeight: 174
-}]
+
 
   //calling posts api
   useEffect(() => {
@@ -56,24 +54,24 @@ const IMAGES =
       <PageHeader  title='Templates' />
       <Grid container spacing={3}>
       <Grid item xs={12} sm={6} md={3}>
-      <Gallery images={IMAGES}/>
+      <img alt={image} src={image}/>
         </Grid>
       </Grid>
       <Grid container spacing={3}>
       <Grid item xs={12} sm={6} md={3}>
-       Test message 2
+      <img alt={image} src={image2}/>
         </Grid>
       </Grid>
       <Grid container spacing={3}>
       <Grid item xs={12} sm={6} md={3}>
-       Test message 3
+      <img alt={image} src={image3}/>
         </Grid>
       </Grid>
-      <Grid container spacing={1}>
-       <Button
-          title="ADD"
-       />
-      </Grid>
+      {/* <Grid container spacing={3}>
+      <Grid item xs={12} sm={6} md={3}>
+      <img alt={image} src={image}/>
+        </Grid>
+      </Grid> */}
       {/* <Grid container spacing={1}>
         {Posts.length >= 0 ? (
           <Typography component='p' align='center' style={{ width: "100%" }}>
